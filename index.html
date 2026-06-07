@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="cs"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Babymoon — začátek července 2026</title>
+<title>Our Baby Moon</title>
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <style>
@@ -25,15 +25,18 @@ h1{font-family:Georgia,"Times New Roman",serif;font-size:34px;margin:.18em 0 .12
   background:#e9efe5;border:1px solid #d3e0cc;border-radius:999px;padding:4px 13px;font-weight:600}
 
 /* top tabs */
-.tabs{display:flex;gap:8px;margin:26px 0 0}
-.tab{cursor:pointer;border:1px solid var(--line);background:var(--panel);
-  padding:9px 20px;border-radius:12px 12px 0 0;font-weight:700;font-size:15.5px;color:var(--muted);
-  border-bottom:none;display:flex;align-items:center;gap:10px;white-space:nowrap}
-.tab .badge{font-family:Georgia,serif;font-size:18px;color:var(--amber)}
-.tab .tlab{display:flex;flex-direction:column;line-height:1.15}
-.tab .thint{font-size:10.5px;font-weight:500;color:var(--muted);text-transform:none;letter-spacing:0}
+.tabs{display:flex;gap:6px;margin:26px 0 0}
+.tab{flex:1 1 0;min-width:0;cursor:pointer;border:1px solid var(--line);background:var(--panel);
+  padding:9px 16px;border-radius:12px 12px 0 0;font-weight:700;font-size:15.5px;color:var(--muted);
+  border-bottom:none}
+.tab .tlab{display:flex;flex-direction:column;line-height:1.2}
+.tab .thint{font-size:10.5px;font-weight:500;color:var(--muted);text-transform:none;letter-spacing:0;white-space:normal}
 .tab.active{background:var(--card);color:var(--ink);box-shadow:0 -2px 8px rgba(60,42,20,.05)}
 .tgcol{min-width:0}
+@media(max-width:560px){
+  .tab{padding:8px 11px;font-size:13.5px}
+  .tab .thint{font-size:9px}
+}
 .tabpane{display:none;background:var(--card);border:1px solid var(--line);border-radius:0 14px 14px 14px;
   padding:20px;box-shadow:var(--shadow)}
 .tabpane.active{display:block}
@@ -186,14 +189,14 @@ footer{max-width:1180px;margin:30px auto 0;padding:0 22px;color:var(--muted);fon
 <body>
 <header class="top">
   <div class="kicker">Dovolená · plánování</div>
-  <h1>Babymoon — začátek července 2026</h1>
-  <div class="sub">2 týdny · 2. trimestr · festival jako kotva · letecky, chladno místo horka</div>
-  <div class="window">Okno 3.–19. 7. 2026 · Johanka ~21.–23. týden</div>
-  <div class="sub" style="margin-top:10px">Letecky tam, pak auto z půjčovny na 2 týdny · mezi prvním a druhým týdnem v pohodě i ~4h přejezd · 3–4 báze a přejíždět, nebo 1 báze na týden + druhý týden volně. U každé karty: festivaly v okně, počasí, hrubé náklady, kam zajet, kde se usadit a kemp.</div>
+  <h1>Our Baby Moon</h1>
+  
+  <div class="window">Okno 3.–19. 7. 2026</div>
+  
 </header>
 <div class="wrap">
-  <div class="tabs"><div class="tab active" data-dir="B" onclick="showTab('B')"><span class="badge">B</span><span class="tlab">Severní okruh<span class="thint">Skandinávie + Island · chladno</span></span></div><div class="tab" data-dir="C" onclick="showTab('C')"><span class="badge">C</span><span class="tlab">Atlantský okruh<span class="thint">jih &amp; ostrovy · mírno, jídlo</span></span></div></div>
-  <div class="tabpane active" data-dir="B"><div class="panesub">Směr B · Norsko · Finsko · Faerské · Švédsko · Island — letecky, chladno místo horka</div><div class="pills"><div class="pill active" data-card="north-norway-helgeland" onclick="showCard('B','north-norway-helgeland')">Helgeland / Træna</div><div class="pill" data-card="north-norway" onclick="showCard('B','north-norway')">Lofoty / Tromsø</div><div class="pill" data-card="finland-lakes" onclick="showCard('B','finland-lakes')">Finská jezera</div><div class="pill" data-card="faroe" onclick="showCard('B','faroe')">Faerské ostrovy</div><div class="pill" data-card="sweden-hoga-kusten" onclick="showCard('B','sweden-hoga-kusten')">Švédsko<span class="nf"> · krajina</span></div><div class="pill" data-card="iceland-eastfjords" onclick="showCard('B','iceland-eastfjords')">Island</div></div>
+  <div class="tabs"><div class="tab active" data-dir="B" onclick="showTab('B')"><span class="tlab">Severní okruh<span class="thint">Skandinávie + Island · chladno</span></span></div><div class="tab" data-dir="C" onclick="showTab('C')"><span class="tlab">Atlantský okruh<span class="thint">jih &amp; ostrovy · mírno, jídlo</span></span></div></div>
+  <div class="tabpane active" data-dir="B"><div class="panesub">Norsko · Finsko · Faerské · Švédsko · Island — letecky, chladno místo horka</div><div class="pills"><div class="pill active" data-card="north-norway-helgeland" onclick="showCard('B','north-norway-helgeland')">Helgeland / Træna</div><div class="pill" data-card="north-norway" onclick="showCard('B','north-norway')">Lofoty / Tromsø</div><div class="pill" data-card="finland-lakes" onclick="showCard('B','finland-lakes')">Finská jezera</div><div class="pill" data-card="faroe" onclick="showCard('B','faroe')">Faerské ostrovy</div><div class="pill" data-card="sweden-hoga-kusten" onclick="showCard('B','sweden-hoga-kusten')">Švédsko<span class="nf"> · krajina</span></div><div class="pill" data-card="iceland-eastfjords" onclick="showCard('B','iceland-eastfjords')">Island</div></div>
 <div class="card active" data-card="north-norway-helgeland">
   <div class="gallery"><figure><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Seven-Sisters-2018.jpg/1280px-Seven-Sisters-2018.jpg" alt="Pásmo Sedmi sester vystupující z moře"><figcaption>Pásmo Sedmi sester vystupující z moře</figcaption></figure><figure><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Torghatten_1.jpg/1280px-Torghatten_1.jpg" alt="Hora s přírodním tunelem skrz vrchol"><figcaption>Hora s přírodním tunelem skrz vrchol</figcaption></figure><figure><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Vegavista.jpg/1280px-Vegavista.jpg" alt="Souostroví Vega na seznamu UNESCO"><figcaption>Souostroví Vega na seznamu UNESCO</figcaption></figure><figure><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Lovund1.jpg/1280px-Lovund1.jpg" alt="Ptačí ostrov s koloniemi papuchalků"><figcaption>Ptačí ostrov s koloniemi papuchalků</figcaption></figure></div>
   <div class="hl">Severní Norsko — Helgeland &amp; Træna</div>
@@ -367,7 +370,7 @@ footer{max-width:1180px;margin:30px auto 0;padding:0 22px;color:var(--muted);fon
     <div class="mi caveat"><b>Proč možná ne</b>Drahé, chladné (~13 °C) a proměnlivé; východní fjordy jsou daleko od Reykjavíku (nutný vnitrostátní let) a divoký kemp je omezený.</div>
     <div class="mi"><b>Babymoon poznámka</b>Chladné léto, klidné scénické projížďky a procházky; Egilsstaðir s nemocnicí na dosah.</div>
   </div>
-</div></div><div class="tabpane" data-dir="C"><div class="panesub">Směr C · Baskicko · Picos · Irsko · Skotsko · sev. Portugalsko · Azory — mírná zeleň a jídlo</div><div class="pills"><div class="pill active" data-card="basque" onclick="showCard('C','basque')">Baskicko</div><div class="pill" data-card="picos-cantabria" onclick="showCard('C','picos-cantabria')">Picos de Europa &amp; Kantábrie</div><div class="pill" data-card="west-ireland" onclick="showCard('C','west-ireland')">Západní Irsko</div><div class="pill" data-card="scotland-hebrides" onclick="showCard('C','scotland-hebrides')">Skotsko</div><div class="pill" data-card="north-portugal" onclick="showCard('C','north-portugal')">Severní Portugalsko</div><div class="pill" data-card="azores" onclick="showCard('C','azores')">Azory</div></div>
+</div></div><div class="tabpane" data-dir="C"><div class="panesub">Baskicko · Picos · Irsko · Skotsko · sev. Portugalsko · Azory — mírná zeleň a jídlo</div><div class="pills"><div class="pill active" data-card="basque" onclick="showCard('C','basque')">Baskicko</div><div class="pill" data-card="picos-cantabria" onclick="showCard('C','picos-cantabria')">Picos de Europa &amp; Kantábrie</div><div class="pill" data-card="west-ireland" onclick="showCard('C','west-ireland')">Západní Irsko</div><div class="pill" data-card="scotland-hebrides" onclick="showCard('C','scotland-hebrides')">Skotsko</div><div class="pill" data-card="north-portugal" onclick="showCard('C','north-portugal')">Severní Portugalsko</div><div class="pill" data-card="azores" onclick="showCard('C','azores')">Azory</div></div>
 <div class="card active" data-card="basque">
   <div class="gallery"><figure><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/San_Sebasti%C3%A1n_-_Ayuntamiento_10.jpg/1280px-San_Sebasti%C3%A1n_-_Ayuntamiento_10.jpg" alt="Záliv La Concha — pintxos metropole baskického pobřeží"><figcaption>Záliv La Concha — pintxos metropole baskického pobřeží</figcaption></figure><figure><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Museo_Guggenheim%2C_Bilbao_%2831273245344%29.jpg/1280px-Museo_Guggenheim%2C_Bilbao_%2831273245344%29.jpg" alt="Gehryho titanová loď nad řekou Nervión"><figcaption>Gehryho titanová loď nad řekou Nervión</figcaption></figure><figure><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Gaztelugatxe_en_espagne.jpg/1280px-Gaztelugatxe_en_espagne.jpg" alt="Klikaté schody na skalní poustevnu nad mořem"><figcaption>Klikaté schody na skalní poustevnu nad mořem</figcaption></figure><figure><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Zumaiaren_ikuspegi_orokorra.jpg/1280px-Zumaiaren_ikuspegi_orokorra.jpg" alt="Vrstvené flyšové útesy Baskického geoparku"><figcaption>Vrstvené flyšové útesy Baskického geoparku</figcaption></figure></div>
   <div class="hl">Baskicko — San Sebastián &amp; pobřeží</div>
